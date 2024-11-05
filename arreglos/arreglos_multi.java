@@ -19,6 +19,6 @@ public class arreglos_multi {
             */
         int[] arr = {6,7,1,2,3,10,9,8};
         Arrays.sort(arr);
-        System.out.println(arr[0]);
+        System.out.println(Arrays.toString(arr));
     }
 }

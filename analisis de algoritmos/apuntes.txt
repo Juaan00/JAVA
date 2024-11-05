@@ -1,0 +1,31 @@
+Análisis de algoritmos
+
+Estimar la cantidad de un recurso específico -> Conocer la compejidad temporal de un algoritmo permite determinar su _viabilidad_ en distintas aplicaciones y _compararlo_ con otros
+
+Tiempo de ejecución
+
+Función del tamaño de la entrada, llamada función de tiempo.
+Tamaño de un problema = Tamaño de entrada -> Tiempo crece en medida que el tamaño de entrada crece.
+Función de tiempo T(n) (Problema: Camino mínimo en un grafo -> Número de vértices u aristas en el grafo)
+
+Análisis teórico:
+Estudiar un algoritmo como si fuera un objeto matemático. No analiza una  situación parrticular sino el fenomeno en general.
+Este análisis debe ser independiente de la maquina, el sistema operativo, entre otros.
+NO Función exacta - SÍ Forma de la función 
+(Orden de crecimiento de la función - > Como cambia una función en la medida que su parametro cambia)
+
+Modelo RAM -> Random Access Memory una memoria que me permite acceder a cualquiera de sus posiciones en cualquier tiempo fijo.
+Cada operacion basica toma una unidad de tiempo. El tiempo de ejecución corresponde al número de operacines básicas que realiza.
+Operaciones básicas: Aritméticas, Lógicas, Relacionales Acceso a memoria, Invocación de funciones y Saltos.
+(Todas las operaciones más complejas es una combinación de operaciones básicas, cada una de estas operaciones toma una unidad de tiempo.)
+Orden de crecimiento -> Calcular cuántas operaciones básicas realiza el algoritmo.
+
+[Análisis del mejor caso] vs [Análisis del caso promedio] vs [Análisis del peor caso]
+
+1. Análisis del mejor caso, escenario donde el programa termina de la manera más optima
+
+2. Análisis del peor caso, escenario donde el programa tiene que analizar todo el arreglo
+
+3. La comparación de los algoritmos siempre es en el peor caso
+
+
