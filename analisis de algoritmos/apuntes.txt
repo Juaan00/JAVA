@@ -28,4 +28,22 @@ Orden de crecimiento -> Calcular cuántas operaciones básicas realiza el algori
 
 3. La comparación de los algoritmos siempre es en el peor caso
 
+______________________________________________________________ // ______________________________________
+
+Complejidad del algoritmo -> Orden de crecimiento
+
+Notación asitótica - Big O notation
+O(g(n)) define un conjunto de funciones cuyo orden de crecimiento no es mayor al de g(n).
+Se utiliza para hablar el peor caso en un algoritmo
+
+Notación asintótica - Big Omega
+Omega(g(n)) define un conjunto de funciones cuyo orden de crecimiento no es menor al de g(n)
+Se utiliza para hablar del mejor caso en un algoritmo
+
+Notación asitótica - Theta
+Conjunto de funciones cuyo orden de crecimineto es igual al de g(n).
+Se utiliza cuando no hay ni menor ni peor caso, cuando su comportamiento es basicamente el mismo.
+______________________________________________________________
+
+
 
