@@ -139,3 +139,17 @@ def ord_mezcla(A):
             A[k], q = D[q], q+1
 
 """
+#Insersion sort
+
+a=[23,1,10,5,2]
+
+def alg_insertion_sort(a):
+    n=0
+    p=0
+    for i in len(a):
+        if i < a[n]:
+            i,a[n]=a[n],a[i]
+
+b=alg_insertion_sort(a)
+print(b)
+            
