@@ -70,8 +70,8 @@ public class ejericicio_3_2 {
 
         //     in_1=" ";
         // }
-        String[] elementos = in_1.split(" ");
-        for(int i=0;i<elementos.length;i++){lista.add(Integer.valueOf(elementos[i]));}
+        //String[] elementos = in_1.split(" ");
+        //for(int i=0;i<elementos.length;i++){lista.add(Integer.valueOf(elementos[i]));}
         // System.out.println(lista);
         if(lista.isEmpty()){
             System.out.println("NO");
