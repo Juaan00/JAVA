@@ -57,7 +57,7 @@ public class ejercicios {
         for(int i=0;i<3;i++){
             comb.add(0);
         }
-        comb.set(0,x/500);
+        int pond = 0;
         while(pond < x){
             if(x>=500+pond&&lista.get(0)>0){
                 comb.set(0, comb.get(0)+1);
@@ -75,21 +75,22 @@ public class ejercicios {
                 pond=pond+50;
             }
             else{
-                // System.out.println("No se puede");
                 break;}
             if(pond==x){contador++;}
             System.out.println(comb);
-            System.out.println(pond);
         }
-        contador++;
         while(comb.get(0)>0){
-            comb.set(1, comb.get(1)+5);
-            comb.set(0,comb.get(0)-1);
+            if(lista.get(1)>=comb.get(1)+5){
+                comb.set(1, comb.get(1)+5);
+                comb.set(0,comb.get(0)-1);
+            }
             comb2 = (ArrayList)comb.clone();
+            System.out.println(comb);
             contador++;
             while(comb.get(1)>0){
                 comb.set(1, comb.get(1)-1);
                 comb.set(2,comb.get(2)+2);
+                System.out.println(comb);
                 contador++;
             }
             comb = (ArrayList)comb2.clone();
