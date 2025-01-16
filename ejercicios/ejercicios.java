@@ -49,52 +49,122 @@ public class ejercicios {
         System.out.println(contador-1);
         
     }
-
     static void miFuncionCuatro(ArrayList <Integer> lista, int x){
-        int contador = 0;
+        int contador=0;
+        int pond=0;
         ArrayList <Integer> comb = new ArrayList<Integer>();
-        ArrayList <Integer> comb2 = new ArrayList<Integer>();
+        ArrayList <Integer> lista2 = (ArrayList)lista.clone();
         for(int i=0;i<3;i++){
             comb.add(0);
         }
+        
+        while(pond!=x){
+            if(x/50>lista.get(2)&&lista.get(2)%2==0&&(x/50)%2!=0){
+                comb.set(2,comb.get(2)+lista.get(2)-1);
+                pond=pond+comb.get(2)*50;
+            }else{
+                comb.set(2,comb.get(2)+lista.get(2));
+                pond=pond+comb.get(2)*50;
+            }
+            if((x-pond)/100>lista.get(1))
+            System.out.println(comb);
+            System.out.println(pond);
+            break;
+        }
+    
+        // while(pond=!x){
+        //     if(x>pond+50&&lista.get(0)>0){
+        //         if(x%20!=0&&lista2.get(0)%2==1){
+                    
+        //         }
+        //     }
+        // }
+        // System.out.println(comb);
+        // System.out.println(lista);
+        // System.out.println(x);
+        // System.out.println(pond);
+    }
+
+    static void miFuncionCuatroDos(ArrayList <Integer> lista, int x){
+        int contador = 0;
         int pond = 0;
-        while(pond < x){
+        boolean a = true;
+        ArrayList <Integer> comb = new ArrayList<Integer>();
+        ArrayList <Integer> comb2 = (ArrayList)lista.clone();
+        for(int i=0;i<3;i++){
+            comb.add(0);
+        }
+        while(a==true){
             if(x>=500+pond&&lista.get(0)>0){
                 comb.set(0, comb.get(0)+1);
                 lista.set(0,lista.get(0)-1);
                 pond=pond+500;
+                if(comb.get(0)*500+comb.get(1)*100+comb.get(2)*50==x){
+                    contador++;
+                }
             }
             else if(x>=100+pond&&lista.get(1)>0){
                 comb.set(1, comb.get(1)+1);
                 lista.set(1,lista.get(1)-1);
                 pond=pond+100;
+                if(comb.get(0)*500+comb.get(1)*100+comb.get(2)*50==x){
+                    contador++;
+                }
             }
-            else if(x>=50+pond&&lista.get(2)>0){
+            else if(x>=pond+50&&lista.get(2)>0){
                 comb.set(2, comb.get(2)+1);
                 lista.set(2,lista.get(2)-1);
                 pond=pond+50;
+                if(comb.get(0)*500+comb.get(1)*100+comb.get(2)*50==x){
+                    contador++;
+                }
             }
+            else if(pond==x&&comb.get(1)>0){
+                if(comb.get(2)+lista.get(2)<=comb2.get(2)){
+                    comb.set(1,comb.get(1)-1);
+                    comb.set(2,comb.get(2)+2);
+                    lista.set(2,lista.get(2)-2);
+                }
+                else{
+                    break;
+                }
+                if(comb.get(0)*500+comb.get(1)*100+comb.get(2)*50==x){
+                    contador++;
+                }
+            }
+            // else if(pond==x&&comb.get(2)-2>=0){
+            //     comb.set(2,comb.get(2)-2);
+            //     comb.set(1,comb.get(1)+1);
+            //     if(comb.get(0)*500+comb.get(1)*100+comb.get(2)*50==x){
+            //         contador++;
+            //     }
+            // }
             else{
-                break;}
-            if(pond==x){contador++;}
-            System.out.println(comb);
-        }
-        while(comb.get(0)>0){
-            if(lista.get(1)>=comb.get(1)+5){
-                comb.set(1, comb.get(1)+5);
-                comb.set(0,comb.get(0)-1);
+                break;
             }
-            comb2 = (ArrayList)comb.clone();
             System.out.println(comb);
-            contador++;
-            while(comb.get(1)>0){
-                comb.set(1, comb.get(1)-1);
-                comb.set(2,comb.get(2)+2);
-                System.out.println(comb);
-                contador++;
-            }
-            comb = (ArrayList)comb2.clone();
+            // System.out.println(lista);
+
         }
+
+        // while(comb.get(1)>0){
+        //     if(comb.get(0)>0){
+        //         comb.set(1, comb.get(1)+5);
+        //         comb.set(0,comb.get(0)-1);
+        //         comb2 = (ArrayList)comb.clone();
+        //     }
+        //     System.out.println(comb);
+        //     contador++;
+        //     while(comb.get(1)>0){
+        //         comb.set(1, comb.get(1)-1);
+        //         comb.set(2,comb.get(2)+2);
+        //         System.out.println(comb);
+        //         contador++;
+        //     }
+        //     if(comb.get(0)>0){
+        //         comb = (ArrayList)comb2.clone();
+        //     }
+        // }
         System.out.println(contador);
     }
 
