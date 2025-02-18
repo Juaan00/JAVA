@@ -1,36 +1,36 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-public class Main{
-    static void miFuncion(ArrayList <Integer> lista){
-        ArrayList <Integer> comb = new ArrayList<Integer>();
-        int contador = 0;
-        for(int i = lista.get(1);i<=lista.get(2);i++){
-            comb.add(i);
-        }
+import java.util.TreeMap;
 
-        for(int j = 1;j<=lista.get(0);j++){
-            String num = String.valueOf(j);
-            String [] digitos = num.split("");
-            int sum = 0;
-            for(int k = 0;k<digitos.length;k++){
-                sum = sum + Integer.valueOf(digitos[k]);
-            }
-            if(comb.contains(sum)){
-                contador = contador + j;
-            }
-        }
-        System.out.println(contador);
-    }
-    @SuppressWarnings("resource")
+public class Main {
     public static void main(String[] args) {
-        ArrayList <Integer> lista = new ArrayList<>();
-        Scanner inpt = new Scanner(System.in);
-        String in1 = inpt.nextLine();
-        String [] arr = in1.split(" ");
-        for(int i =0; i<arr.length;i++){
-            lista.add(Integer.valueOf(arr[i]));
-        }
-        miFuncion(lista);
+        Scanner scanner = new Scanner(System.in);
+        int casosPrueba = scanner.nextInt(); 
 
+        for (int i = 0; i < casosPrueba; i++) {
+            int coposNieve = scanner.nextInt(); 
+            
+            TreeMap<Integer, Integer> coposMapa = new TreeMap<>(); 
+            int maxUnicos = 0;
+            int inicio = 0; 
+
+            for (int j = 0; j < coposNieve; j++) {
+                int copo = scanner.nextInt(); 
+
+                
+                if (coposMapa.containsKey(copo)) {
+                    inicio = Math.max(inicio, coposMapa.get(copo) + 1); 
+                }
+
+                
+                coposMapa.put(copo, j);
+
+             
+                maxUnicos = Math.max(maxUnicos, j - inicio + 1);
+            }
+
+            System.out.println(maxUnicos);
+        }
+
+        scanner.close();
     }
 }
