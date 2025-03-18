@@ -9,7 +9,7 @@ public class arbolA {
     public static void miFuncionA(Map<String, Integer> al,int contador,int caso, int n){
         
         if(al.size()>0){
-            // System.out.println("elementos del árbol: "+al+"\ncontador de elementos: "+contador);
+            // System.out.println("elementos del árbol: "+al+"\ncontador de elementos: "+contador); 
             for (Map.Entry<String, Integer> e : al.entrySet()) {
                 String k = e.getKey();
                 double vd = (e.getValue()*100.0)/contador;
@@ -22,8 +22,8 @@ public class arbolA {
         }
     }
     public static void main(String[] args) throws IOException {
-        // BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        FileInputStream file = new FileInputStream("/workspaces/JAVA/ejercicios/ejemplo.txt");
+        // BufferedReader in = new BufferedReader(new InputStreamReader(System.in)); si el input es de consola
+        FileInputStream file = new FileInputStream("/workspaces/JAVA/ejercicios/ejemplo.txt"); //si el input es de un .txt
         BufferedReader in = new BufferedReader(new InputStreamReader(file));
         StringTokenizer st = new StringTokenizer(in.readLine());
         int n = Integer.parseInt(st.nextToken());
