@@ -17,7 +17,7 @@ public class arbolB {
         System.out.println(contador);
     }
     public static void main(String[] args) throws IOException{
-        // BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        // BufferedReader in = new BufferedReader(new InputStreamReader(System.in)); si el input es de consola
         FileInputStream file = new FileInputStream("/workspaces/JAVA/ejercicios/inarbolB.txt");
         BufferedReader in = new BufferedReader(new InputStreamReader(file));
         String entrada = in.readLine();

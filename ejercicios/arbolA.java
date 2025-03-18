@@ -9,7 +9,7 @@ public class arbolA {
     public static void miFuncionA(Map<String, Integer> al,int contador,int caso, int n){
         
         if(al.size()>0){
-            // System.out.println("elementos del árbol: "+al+"\ncontador de elementos: "+contador); 
+            // System.out.println("elementos del árbol: "+al+"\ncontador de elementos: "+contador); epa
             for (Map.Entry<String, Integer> e : al.entrySet()) {
                 String k = e.getKey();
                 double vd = (e.getValue()*100.0)/contador;
