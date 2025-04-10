@@ -1,11 +1,50 @@
+
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import java.util.TreeSet;
 
 public class Main {
+    static boolean verificadorCondicion(ArrayList<ArrayList<Integer>> ll, int i, int j,boolean condicion){
+        int i1 = ll.size()-i-1;
+        int j1 = ll.size()-j-1;
+        int resultado1 = ll.get(i).get(j)+ll.get(i1).get(j);
+        int resultado2 = ll.get(i).get(j)+ll.get(i).get(j1);
+        if(resultado1!=ll.size()-1||resultado2!=ll.size()-1){condicion=false;}
+        TreeSet<Integer> ar = new TreeSet<Integer>();
+        for(int k=0;k<ll.size();k++){ar.add(k);}
+        TreeSet<Integer> br = new TreeSet<Integer>();
+        for(int k=0;k<ll.size();k++){
+            br.add(ll.get(i).get(k));
+        }
+        if(ar.equals(br)==false){condicion=false;}
+        br = new TreeSet<Integer>();
+       	for(int k=0;k<ll.size();k++){
+            br.add(ll.get(k).get(j));
+        }
+        if(ar.equals(br)==false){condicion=false;}
+        
+        return condicion;
+    }
+    static void verificadorMatriz(ArrayList<ArrayList<Integer>> ll){
+        boolean condicion = true;
+        int index1 = 0;
+        int index2 = 0;
+        for(int i=0;i<ll.size();i++){
+            for(int j=0;j<ll.size();j++){
+                condicion = verificadorCondicion(ll,i,j,condicion);
+                if(condicion==false){
+                    index1 = i;
+                    index2 = j;
+                    break;}
+            }
+            if(condicion==false){break;} 
+        }
+        if(condicion=true){System.out.println("Cumple condicion");}
+        else{System.out.println("No cumple condición en la posición "+index1+" "+index2);}
+    }
     static void miFuncionF(int numEntrada){
         if(numEntrada==1){
             System.out.println("YES	");
@@ -43,6 +82,7 @@ public class Main {
             ll.add(al);
             condicion--;
         }
+        verificadorMatriz(ll);
         for(int k=0;k<ll.size();k++){
             for(int j=0;j<ll.size();j++){
                 if(j==ll.size()-1){
